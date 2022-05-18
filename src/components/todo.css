@@ -1,24 +1,28 @@
 .extech_todo_container {
-	display: flex;
-	flex-direction: column;
-	gap:10px;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .extech_todo_container > div {
-	width: 500px
+  width: 90%;
+  /* border: 2PX solid rgb(159, 159, 159); */
+  border-radius: 7px;
 }
 
 .extech_todo_list {
+  margin-top: 18px;
+  /* height: 120px; */
   display: flex;
   flex-direction: column;
-  background-color: gray;
+  width: 100%;
+  /* background-color: rgba(209, 203, 203, 0.313); */
+  /* border-radius: 20px; */
   justify-content: space-between;
   gap: 5px;
-  padding: 15px;
+  /* padding: 15px; */
 }
-
-
 
 .singleTodo {
   display: flex;
@@ -26,6 +30,27 @@
   justify-content: space-between;
   align-items: center;
   gap: 5px;
+  background-color: white;
+  padding: 30px;
+  margin: 4px 0;
+  border-radius: 8px;
+  box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.2);
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+}
+
+.singleTodo:hover {
+  box-shadow: 2px 2px 8px 4px rgba(128, 128, 128, 0.2);
+}
+
+.selected {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px;
 }
 
 .todoTitle {
@@ -33,27 +58,71 @@
 }
 
 .extech_notices {
-	background-color: grey;
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 5px;
+  width: 100%;
+  gap: 12px;
 }
 .extech_notices > div {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	align-content: center;
-	justify-content: space-between;
-	padding: 0px 5px 0px 5px;
-	border-bottom: 1px solid yellow;
-	font-weight: bold;
+  display: flex;
+  padding: 8px 24px;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px;
+  align-content: center;
+  justify-content: space-between;
+  /* padding: 0px 5px 0px 5px; */
+  border-bottom: 1px solid yellow;
+  font-weight: bold;
 }
 
 .extech_notice_success {
-	background-color: green;
-	color: white;
+  background-color: rgb(180, 181, 180);
+  color: white;
 }
 
 .extech_notice_error {
-	background-color: red;
-	
+  background-color: rgb(214, 207, 207);
+  color: white;
+}
+
+.clearNotices {
+  align-self: center;
+}
+
+.extech_todo_top_actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+}
+
+.extech_todo_top_actions > input {
+  width: 70%;
+  height: 20px;
+  border-radius: 8px;
+  font-size: large;
+  border: none;
+  border-color: gray;
+  padding: 15px;
+  font-size: 14px;
+  outline: 0px;
+  box-shadow: 0 0 2px 1px lightgray;
+}
+
+.button {
+  padding: 0 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: tomato;
+  color: white;
+  font-weight: 800;
+  border: none;
+  transition: all 800ms ease-in-out;
+}
+
+.button:hover {
+  background-color: hsl(9, 66%, 54%);
 }
