@@ -100,7 +100,7 @@ function Todo(props) {
   };
 
   let completedChecked = (e) => {
-    let id = parseInt(e.target.getAttribute("data-id"), 2);
+    let id = parseInt(e.target.getAttribute("data-id"), 10);
     let filteredTodos = todos.filter((val, ind) => {
       if (id === ind) {
         val.completed = !val.completed;
@@ -108,7 +108,7 @@ function Todo(props) {
       return val;
     });
     setTodos(filteredTodos);
-    setgTodos(todos);
+    setgTodos(filteredTodos);
   };
   let deleteTodo = (id) => {
     let filteredTodos = todos.filter((val, ind) => {
@@ -125,7 +125,6 @@ function Todo(props) {
   };
 
   let filterTheTodos = (val) => {
-    console.log(val);
     if ("all" === val) {
       setgTodos(todos);
     }
