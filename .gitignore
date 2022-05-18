@@ -8,6 +8,15 @@
 # testing
 /coverage
 
+
+
+#components
+/src/components/Checkout.js
+/src/components/CRA.js
+/src/components/Navbar.js
+/src/components/Products.js
+/src/components/Shophere.js
+/src/components/shophere.css
 # production
 /build
 
@@ -21,4 +30,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-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
