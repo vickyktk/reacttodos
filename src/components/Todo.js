@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPlus, faRemove } from "@fortawesome/free-solid-svg-icons";
 import "./todo.css";
@@ -43,10 +43,20 @@ function Notices(props) {
   );
 }
 
-function Todo(props) {
-  let [todos, setTodos] = useState([]);
 
-  let [gTodos, setgTodos] = useState(todos);
+if (!localStorage.getItem("localTodos"))
+  localStorage.setItem("localTodos", JSON.stringify([]));
+
+
+function Todo(props) {
+  let localTodos = localStorage.getItem("localTodos");
+  let [todos, setTodos] = useState(JSON.parse(localTodos));
+  let [gTodos, setgTodos] = useState(JSON.parse(localTodos));
+
+  useEffect(()=>{
+    localStorage.setItem("localTodos", JSON.stringify(todos));
+  }, [todos])
+
   let [inputText, setInputText] = useState("");
   const [notices, setNotices] = useState([]);
 
@@ -123,11 +133,12 @@ function Todo(props) {
       let gtTodos = todos.filter((val) => val.completed === true);
       setgTodos(gtTodos);
     }
-    if ("incomplete" === val) {
+    if ("active" === val) {
       let gtTodos = todos.filter((val) => val.completed !== true);
       setgTodos(gtTodos);
     }
   };
+
 
   return (
     <>
@@ -146,7 +157,7 @@ function Todo(props) {
           <select onChange={(e) => filterTheTodos(e.target.value)}>
             <option value="all">All</option>
             <option value="completed">Completed</option>
-            <option value="incomplete">InComplete</option>
+            <option value="active">Active Tasks</option>
           </select>
         </div>
 
