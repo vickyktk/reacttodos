@@ -8,14 +8,6 @@
 # testing
 /coverage
 
-# components
-/src/components/Checkout.js
-/src/components/CRA.js
-/src/components/Navbar.js
-/src/components/Products.js
-/src/components/Shophere.js
-/src/components/shophere.css
-
 # production
 /build
 
